@@ -6,11 +6,11 @@ class ActivitySerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Activity
-        fields = ('id', 'user', 'title', 'created_on')
+        fields = ('activity_id', 'user_id', 'act_title', 'created_on')
 
 
 class StatSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Stat
-        fields = ('id', 'title', 'activity', 'count', 'created_on')
+        fields = ('stat_id', 'activity_id', 'count', 'date_done')
