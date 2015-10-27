@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-
+# from rest_framework import routers
 from rest_framework_nested import routers
 from stapp import views
+
 
 router = routers.SimpleRouter()
 router.register(r'activities', views.ActivityViewSet)
