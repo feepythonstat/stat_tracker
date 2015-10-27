@@ -6,6 +6,8 @@ static==0.4
 wsgiref==0.1.2
 django-rest-swagger==0.3.4
 djangorestframework==3.2.4
+django-rest-framework-nested==0.0.1
+django-cors-headers==1.1.0
 psycopg2==2.6.1
 PyYAML==3.11
 wheel==0.24.0
