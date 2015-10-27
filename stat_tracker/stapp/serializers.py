@@ -10,7 +10,7 @@ class ActivitySerializer(serializers.HyperlinkedModelSerializer):
 
 
 class StatSerializer(serializers.HyperlinkedModelSerializer):
-
+    activity_id = serializers.PrimaryKeyRelatedField(many=False, read_only=True, source='activity')
     class Meta:
         model = Stat
         fields = ('stat_id', 'activity_id', 'count', 'date_done')

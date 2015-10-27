@@ -4,6 +4,8 @@ dj-static==0.0.6
 gunicorn==19.1.1
 static==0.4
 wsgiref==0.1.2
+django-rest-swagger==0.3.4
 djangorestframework==3.2.4
 psycopg2==2.6.1
+PyYAML==3.11
 wheel==0.24.0

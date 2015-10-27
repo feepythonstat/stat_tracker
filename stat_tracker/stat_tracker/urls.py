@@ -17,12 +17,17 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 from rest_framework import routers
-from stapp.views import ActivityViewSet, StatViewSet
+from stapp import views
 
-router = routers.DefaultRouter()
-router.register(r'activities', ActivityViewSet)
+router = routers.SimpleRouter()
+router.register(r'activities', views.ActivityViewSet)
+
+activities_router = routers.NestedSimpleRouter(router, r'activities', lookup='activity')
+activities_router.register(r'stats', views.StatViewSet)
+router.register(r'stats', views.StatViewSet)
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include(router.urls)),
+    url(r'^api/', include(activities_router.urls)),
 ]

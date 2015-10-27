@@ -8,11 +8,17 @@ class Activity(models.Model):
     # user = models.ForeignKey(User)
     act_title = models.CharField(max_length=100)
     act_description = models.CharField()
-    created_on = models.DateTimeField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return "{}".format(self.act_title)
 
 
 class Stat(models.Model):
     # stat_title = models.CharField(max_length=100)
     activity = models.ForeignKey(Activity)
     count = models.PositiveIntegerField(null=True, blank=True)
-    date_done = models.DateTimeField()
+    date_done = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return "Date: {}. Count: {}.".format(self.date_done, self.count)
